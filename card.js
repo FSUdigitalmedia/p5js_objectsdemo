@@ -3,8 +3,8 @@ class Card {
     this.img = img;
     this.x = x;
     this.y = y;
-    this.w = 72;
-    this.h = 131;
+    this.w = img.width;
+    this.h = img.height;
     this.isHidden = false;
   }
   isInside(xPos,yPos) {

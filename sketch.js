@@ -1,11 +1,12 @@
 let cards = [];
 
 function setup() {
-  createCanvas(700, 400);
+  createCanvas(200, 1000);
   for (let i = 0; i <= 5; i++) {
-    let thisImg = loadImage("assets/card"+i+".png");
-    let thisCard = new Card(thisImg, 50+i*100, height/2);
-    cards.push(thisCard);
+    let thisImg = loadImage("assets/card"+i+".png", img => {
+      let thisCard = new Card(thisImg, 40, 40+i*150);
+      cards.push(thisCard);
+    });
   }
 }
 
@@ -29,6 +30,6 @@ function keyPressed() {
   // are ordered on screen, since each card has its x and y values
   for (let i = 0; i < cards.length; i++) {
     const element = cards[i];
-    element.x = 50+i*100;
+    element.y = 40+i*150;
   }
 }
